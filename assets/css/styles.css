@@ -1,0 +1,38 @@
+* {
+    background: rgb(226, 215, 215);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+header {
+    margin: 20px auto;
+    text-align: center;
+    border-bottom: 5px solid black;
+}
+
+main h2 {
+    text-align: center;
+}
+
+#blog-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-field {
+    background: whitesmoke;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+#content-input {
+    min-height: 50px;
+}
+
+#submit-btn {
+    background: black;
+    color: whitesmoke;
+    max-width: 100px;
+    min-width: 100px;
+    min-height: 30px;
+}
