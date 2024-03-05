@@ -17,7 +17,7 @@ const blogStorageObject = {
 };
 
 // function for submitting form
-blogForm.onsubmit = function() {
+blogForm.onsubmit = function () {
 	// debug logs
 	// console.log(usernameInput.value);
 	// console.log(titleInput.value);
