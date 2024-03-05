@@ -36,3 +36,7 @@ main h2 {
     min-width: 100px;
     min-height: 30px;
 }
+
+#message {
+    color: red;
+}
