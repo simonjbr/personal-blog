@@ -17,11 +17,9 @@ const blogStorageObject = {
 };
 
 // function for submitting form
-blogForm.onsubmit = function () {
-	// debug logs
-	// console.log(usernameInput.value);
-	// console.log(titleInput.value);
-	// console.log(contentInput.value);
+blogForm.onsubmit = function (event) {
+	// prevent default behaviour
+	// event.preventDefault();
 
 	// reset #message innerHTML
 	messageElement.innerHTML = "";
@@ -43,12 +41,21 @@ blogForm.onsubmit = function () {
 	blogStorageObject.title = titleInput.value;
 	blogStorageObject.content = contentInput.value;
 
-	console.log(blogStorageObject);
+	console.log('blogStorageObject', blogStorageObject);
 
-	// load blogStorageObject to localStorage
-	localStorage.setItem(blogStorageObject, JSON.stringify(blogStorageObject));
+	// create array to store blogStorageObject(s)
+	let existingBlogObjects = [];
+	if (localStorage.getItem('existingBlogObjects')){
+		existingBlogObjects = JSON.parse(localStorage.getItem('existingBlogObjects'));
+	}
 
-	console.log(localStorage);
+	// push new blog object onto array
+	existingBlogObjects.push(blogStorageObject);
+	console.log('existingBlogObjects', existingBlogObjects);
+
+	// load array into localStorage
+	localStorage.setItem('existingBlogObjects', JSON.stringify(existingBlogObjects));
+	console.log('localStorage', localStorage);
 
 	console.log("Form inputs are valid");
 
