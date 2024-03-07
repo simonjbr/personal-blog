@@ -27,7 +27,7 @@ backButton.addEventListener('click', backToIndex);
 const blogContainer = document.querySelector("#blog-container");
 
 
-// function to get new blog object from local storage
+// function to get and return array of blog objects from local storage
 const getBlogStorageObjects = function () {
 	return JSON.parse(localStorage.getItem('existingBlogObjects'));
 };
@@ -72,7 +72,7 @@ const paintBlogCards = function () {
 	// check if there are items in localStorage
 	if (localStorage.length > 0) {
 		
-		// iterate over objects and create and append blog cards
+		// iterate over objects and create and append blog cards to blog container
 		for (let el of existingBlogObjects) {
 			blogContainer.appendChild(createBlogCard(el));
 		}
