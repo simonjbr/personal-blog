@@ -4,7 +4,7 @@ const darkModeButton = document.querySelector("#dark-mode-button");
 
 // create funtion to switch between light and dark mode
 const switchDarkMode = function () {
-	document.documentElement.setAttribute('style', 'background: rgb(18 18 18); color: rgb(226, 215, 215);');
+	// document.documentElement.setAttribute('style', 'background: rgb(18 18 18); color: rgb(226, 215, 215);');
 };
 
 // create event listener for dark mode button
@@ -26,24 +26,14 @@ backButton.addEventListener('click', backToIndex);
 // get reference to #blog-container
 const blogContainer = document.querySelector("#blog-container");
 
-// create object to store blog inputs
-let blogStorageObject = {
-	username: "",
-	title: "",
-	content: "",
-};
 
 // function to get new blog object from local storage
-const getBlogStorageObject = function () {
-	blogStorageObject = JSON.parse(localStorage.getItem(blogStorageObject));
-	console.log('blogStorageObject', blogStorageObject);
+const getBlogStorageObjects = function () {
+	return JSON.parse(localStorage.getItem('existingBlogObjects'));
 };
 
-// function to create and append new blog card
-// TODO: alter function to receive an array of storage objects with an index for a parameter
-const createBlogCard = function () {
-	// gets new object from localStorage
-	getBlogStorageObject();
+// function to create new blog card
+const createBlogCard = function (blogObject) {
 
 	// create necassary elements
 	const newBlogCardEl = document.createElement("article");
@@ -57,26 +47,42 @@ const createBlogCard = function () {
 	blogContentEl.className = "blog-content";
 	blogCreditEl.className = "blog-credit";
 
-	// add content from blogStorageObject
-	blogHeadingEl.innerHTML = blogStorageObject.title;
-	blogContentEl.innerHTML = blogStorageObject.content;
-	blogCreditEl.innerHTML = `Posted by: ${blogStorageObject.username}`;
+	// add content from blogObject
+	blogHeadingEl.innerHTML = blogObject.title;
+	blogContentEl.innerHTML = blogObject.content;
+	blogCreditEl.innerHTML = `Posted by: ${blogObject.username}`;
 
 	// assemble blog card
 	newBlogCardEl.appendChild(blogHeadingEl);
 	newBlogCardEl.appendChild(blogContentEl);
 	newBlogCardEl.appendChild(blogCreditEl);
 
-	// append to the #blog-container
-	blogContainer.appendChild(newBlogCardEl);
+	// return fully constructed blog card element
+	return newBlogCardEl;
 
 };
 
+// function to paint new and old blog card(s) to page
+const paintBlogCards = function () {
 
-// creates blog card from blogStorageObject data
-createBlogCard();
+	// gets array of blog objects from localStorage
+	let existingBlogObjects = getBlogStorageObjects();
+	console.log('existingBlogObjects', existingBlogObjects);
 
-// 
+	// check if there are items in localStorage
+	if (localStorage.length > 0) {
+		
+		// iterate over objects and create and append blog cards
+		for (let el of existingBlogObjects) {
+			blogContainer.appendChild(createBlogCard(el));
+		}
+
+	}
+};
+
+
+// paints new and old blog card(s) to page
+paintBlogCards();
 
 
 
