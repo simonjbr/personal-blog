@@ -11,25 +11,28 @@
 </head>
 
 <body>
-	<header>
-		<h1>My First Blog</h1>
-	</header>
-
-	<main>
-		<h2>What's on your mind, friend?</h2>
-		<form id="blog-form" name="blogForm" action="./blog.html">
-			<label for="username">Username</label>
-			<input type="text" name="username" id="unsername-input" class="input-field" autocomplete="">
-			<label for="title">Title</label>
-			<input type="text" name="title" id="title-input" class="input-field">
-			<label for="content">Content</label>
-			<textarea type="text" name="content" id="content-input" class="input-field"></textarea>
-			<input type="submit" name="submit" value="Submit" id="submit-btn">
-			<div id="message"></div>
-		</form>
-	</main>
-
-	<footer></footer>
+	<div class="container light">
+		<header>
+			<h1>My First Blog</h1>
+			<button id="dark-mode-button">Dark/Light</button>
+		</header>
+	
+		<main>
+			<h2>What's on your mind, friend?</h2>
+			<form id="blog-form" name="blogForm" action="./blog.html">
+				<label for="username">Username</label>
+				<input type="text" name="username" id="unsername-input" class="input-field" autocomplete="">
+				<label for="title">Title</label>
+				<input type="text" name="title" id="title-input" class="input-field">
+				<label for="content">Content</label>
+				<textarea type="text" name="content" id="content-input" class="input-field"></textarea>
+				<input type="submit" name="submit" value="Submit" id="submit-btn">
+				<div id="message"></div>
+			</form>
+		</main>
+	
+		<footer></footer>
+	</div>
 
 	<script src="./assets/js/form.js"></script>
 </body>

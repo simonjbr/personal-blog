@@ -1,7 +1,7 @@
 // DARK MODE
 // get reference to dark mode button
 const darkModeButton = document.querySelector("#dark-mode-button");
-// get reference to .container
+// get reference to .container div
 const container = document.querySelector(".container");
 
 // set default mode to light

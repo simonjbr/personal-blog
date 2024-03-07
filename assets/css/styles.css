@@ -1,12 +1,54 @@
+:root {
+	--light-bg: rgb(226, 215, 215);
+	--light-blog-card-bg: rgb(237, 227, 227);
+	--dark-bg: #3c3838;
+}
+
 * {
-	background: rgb(226, 215, 215);
+	/* background: rgb(226, 215, 215); */
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-header {
+/* header {
 	margin: 20px auto;
 	text-align: center;
 	border-bottom: 5px solid black;
+} */
+
+body {
+	margin: 0;
+}
+
+.container {
+	height: 100vh;
+	width: 100vw;
+}
+
+header {
+	display: flex;
+	margin: 20px 20px;
+	text-align: center;
+	border-bottom: 5px solid black;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 0;
+}
+
+#dark-mode-button {
+	background: black;
+	color: var(--light-bg);
+}
+
+/* Light Mode */
+.light {
+	background: var(--light-bg);
+	color: black;
+}
+
+/* Dark Mode */
+.dark {
+	background: var(--dark-bg);
+	color: var(--light-bg);
 }
 
 main h2 {
