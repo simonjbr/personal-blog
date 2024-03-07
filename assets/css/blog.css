@@ -1,11 +1,21 @@
 :root {
 	--light-bg: rgb(226, 215, 215);
 	--light-blog-card-bg: rgb(237, 227, 227);
+	--dark-bg: #3c3838;
 }
 
 * {
-	background: var(--light-bg);
+	/* background: var(--light-bg); */
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+body {
+	margin: 0;
+}
+
+.container {
+	height: 100vh;
+	width: 100vw;
 }
 
 header {
@@ -14,7 +24,8 @@ header {
 	text-align: center;
 	border-bottom: 5px solid black;
 	justify-content: space-between;
-	align-items: center	;
+	align-items: center;
+	margin-top: 0;
 }
 
 #back-button {
@@ -23,34 +34,46 @@ header {
 }
 
 #dark-mode-button {
-	border: 0;
-	padding: 0;
+	background: black;
+	color: var(--light-bg);
+}
+
+/* Light Mode */
+.light {
+	background: var(--light-bg);
+	color: black;
 }
 
 /* blog card styling */
 .blog-card {
 	display: flex;
-	background: var(--light-blog-card-bg);
+	/* background: var(--light-blog-card-bg); */
 	border: 3px solid black;
 	flex-direction: column;
 	align-items: center;
-	margin-bottom: 10px;
+	margin: 10px;
 }
 
 .blog-heading {
 	border-bottom: 2px solid black;
-	background: var(--light-blog-card-bg);
+	/* background: var(--light-blog-card-bg); */
 	width: 95%;
 	margin: 0 10px;
 }
 
 .blog-content {
-	background: var(--light-blog-card-bg);
+	/* background: var(--light-blog-card-bg); */
 	margin: 10px 20px;
 	width: 95%;
 }
 
 .blog-credit {
-	background: var(--light-blog-card-bg);
+	/* background: var(--light-blog-card-bg); */
 	font-size: 80%;
+}
+
+/* Dark Mode */
+.dark {
+	background: var(--dark-bg);
+	color: var(--light-bg);
 }
