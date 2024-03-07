@@ -78,7 +78,6 @@ const paintBlogCards = function () {
 
 	// gets array of blog objects from localStorage
 	let existingBlogObjects = getBlogStorageObjects();
-	console.log('existingBlogObjects', existingBlogObjects);
 
 	// check if there are items in localStorage
 	if (localStorage.length > 0) {

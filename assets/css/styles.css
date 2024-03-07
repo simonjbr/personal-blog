@@ -5,15 +5,8 @@
 }
 
 * {
-	/* background: rgb(226, 215, 215); */
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
-
-/* header {
-	margin: 20px auto;
-	text-align: center;
-	border-bottom: 5px solid black;
-} */
 
 body {
 	margin: 0;
@@ -55,6 +48,7 @@ main h2 {
 	text-align: center;
 }
 
+/* Form styling */
 #blog-form {
 	display: flex;
 	flex-direction: column;

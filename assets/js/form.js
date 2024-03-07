@@ -9,6 +9,8 @@ let mode = "light";
 
 // create funtion to switch between light and dark mode
 const switchDarkMode = function () {
+
+	// check for current mode, switch it and then alter classList of container for the new theme
 	if (mode === "light") {
 		mode = 'dark';
 		container.classList = "container dark";
@@ -41,9 +43,7 @@ const blogStorageObject = {
 };
 
 // function for submitting form
-blogForm.onsubmit = function (event) {
-	// prevent default behaviour
-	// event.preventDefault();
+blogForm.onsubmit = function () {
 
 	// reset #message innerHTML
 	messageElement.innerHTML = "";
@@ -65,8 +65,6 @@ blogForm.onsubmit = function (event) {
 	blogStorageObject.title = titleInput.value;
 	blogStorageObject.content = contentInput.value;
 
-	console.log('blogStorageObject', blogStorageObject);
-
 	// create array to store blogStorageObject(s)
 	let existingBlogObjects = [];
 	if (localStorage.getItem('existingBlogObjects')){
@@ -75,16 +73,11 @@ blogForm.onsubmit = function (event) {
 
 	// push new blog object onto array
 	existingBlogObjects.push(blogStorageObject);
-	console.log('existingBlogObjects', existingBlogObjects);
 
 	// load array into localStorage
 	localStorage.setItem('existingBlogObjects', JSON.stringify(existingBlogObjects));
-	console.log('localStorage', localStorage);
 
-	console.log("Form inputs are valid");
-
+	// redirect to the blog entries page
 	window.location.pathname = "blog.html"
 	return true;
 };
-
-// blogForm.onsubmit();
