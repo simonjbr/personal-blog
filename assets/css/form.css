@@ -1,0 +1,28 @@
+/* Form styling */
+#blog-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.input-field {
+	background: whitesmoke;
+	width: 90%;
+	margin-bottom: 20px;
+}
+
+#content-input {
+	min-height: 50px;
+}
+
+#submit-btn {
+	background: black;
+	color: whitesmoke;
+	max-width: 100px;
+	min-width: 100px;
+	min-height: 30px;
+}
+
+#message {
+	color: red;
+}
